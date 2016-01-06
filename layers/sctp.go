@@ -606,3 +606,7 @@ func (sc SCTPEmptyLayer) SerializeTo(b gopacket.SerializeBuffer, opts gopacket.S
 	binary.BigEndian.PutUint16(bytes[2:4], 4)
 	return nil
 }
+
+func (u *SCTP) CanDecode() gopacket.LayerClass {
+	return LayerTypeSCTP
+}
